@@ -1,0 +1,51 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0,0 , 0, .1)
+}
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color:#F7F701;
+    height: 10vh;
+    border-bottom: 1px solid black;
+}
+.header-content{
+    flex: 1; 
+}
+.header-content h1{
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+    color: #FB405C;
+}
+.header-search{
+    flex: 2;
+}
+.header-search input{
+    height: 6vh;
+    width: 100%;
+    border-radius: 6vh;
+    padding-left: 3vh;
+    border: 1px solid black;
+    font-size: 20px;
+    color: black;
+}
+nav{
+    flex: 1;
+}
+nav img{
+    height: 8vh;
+    width: 8vh;
+    border-radius: 8vh;
+    margin-left: 2vh;
+    transition: .2s;
+}
+nav img:hover{
+    transform: scale(1.2);
+}

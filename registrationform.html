@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Teko&display=swap" rel="stylesheet">
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="css/regform.css">
+	<script>
+		//document.getElementById("captcha2").onload=function() {generateOTP()};
+
+		function generateOTP() 
+		{
+			var digits = '0123456789'; 
+			let OTP = ''; 
+			for (let i = 0; i < 4; i++ ) 
+			{ 
+				OTP += digits[Math.floor(Math.random() * 10)]; 
+			}
+			document.getElementById('captcha2').value = OTP;
+			return 0;
+		} 
+		function validate()
+		{
+			
+			name1=document.getElementById('name2').value;
+			mobileno=document.getElementById('rollno2').value;
+			college1=document.getElementById('college2').value;
+			sem1=document.getElementById('sem2').value;
+			dept1=document.getElementById('dept2').value;
+			email1=document.getElementById('email2').value;
+			pass1=document.getElementById('pass2').value;
+			cpass1=document.getElementById('cpass2').value;
+			captcha1=document.getElementById('captcha2').value;
+			recaptcha1=document.getElementById('recaptcha2').value;
+
+			atposition=email1.indexOf("@");  
+			dotposition=email1.lastIndexOf(".");
+
+			if(name1==0 || rollno1==0 || sem1==0 || college1==0 || dept1==0 || email1==0 || pass1==0 || cpass1==0 || captcha1==0 || recaptcha1==0)
+			{
+				alert("Please fill in the details");
+			}
+			else if(!form.maincheckbox.checked)
+			{
+				alert('Please agree to the terms and conditions');
+			}
+			else if(isNaN(name1)==0)
+			{
+				alert("Name cannot be only numeric");
+			}
+			else if(isNaN(rollno1)==1)
+			{
+				alert("RollNo can only be numeric");
+			}
+			else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email1.length)
+			{  
+				alert("Please enter a valid email address");
+			} 
+			else if (pass1!=cpass1) 
+			{
+				alert("Password doesn't match");
+			}
+			else if(captcha1!=recaptcha1)
+			{
+				alert("Captcha doesn't match");
+			} 
+			else
+			{
+				alert("Login Successful");
+			}
+		}
+	</script>
+</head>
+<body>
+	<form id="frm" method="post" name="form">
+		<h1>Register Here</h1> <hr class="hrr">
+		<h3>Name</h3><input type="text" placeholder="Enter Name" class="row-details" id="name2" onFocus="generateOTP()"><br>
+		<h3>RollNo</h3><input type="tel" pattern="[0-9]{1-7}" placeholder="Enter RollNo" class="row-details" id="rollno2"></br>
+		<h3>College/University</h3>
+		<select class="row-details" id="college2">
+			<option value="0">---select---</option>
+			<option value="1">Gauhati University</option>
+			<option value="2">Lovely Professional University</option>
+			<option value="3">Assam Engineering College</option>
+			<option value="4">Jorhat Engineering College</option>
+		</select>
+		<h3>Semester</h3>
+		<select class="row-details" id="sem2">
+			<option value="0">---select---</option>
+			<option value="1">I</option>
+			<option value="2">II</option>
+			<option value="3">III</option>
+			<option value="4">IV</option>
+			<option value="5">V</option>
+			<option value="6">VI</option>
+			<option value="7">VII</option>
+			<option value="8">VIII</option>
+		</select><br>
+		<h3>Department</h3>
+		<select class="row-details" id="dept2">
+			<option value="0">---select---</option>
+			<option value="1">Physics</option>
+			<option value="2">Chemistry</option>
+			<option value="3">Botany</option>
+			<option value="4">Zoology</option>
+			<option value="5">Mathematics</option>
+			<option value="6">CSE</option>
+			<option value="7">IT</option>
+			<option value="8">BioTech</option>
+			<option value="9">ECE</option>
+			<option value="10">Law</option>
+		</select><br>
+		<h3>Email</h3><input type="Email" placeholder="Enter Email" class="row-details" id="email2">
+		<h3>Password</h3><input type="password" placeholder="Enter Password" class="row-details" id="pass2"><br>
+		<h3>Confirm Password</h3><input type="password" placeholder="Re-enter Password" id="cpass2" class="row-details"><br><br><br>
+		<hr class="hrr">
+		<h3>Captcha</h3><input type="tel" pattern="[0-5]{0-9}" disabled class="row-details" id="captcha2"><br>
+		<h3>Human? Write the above code!</h3><input type="tel" pattern="[0-5]{0-9}" class="row-details" maxlength="4" id="recaptcha2"><br><br><br>
+		<div id="checkbox">
+			<span id="tnc0">
+					<input type="checkbox" name="maincheckbox" required>I agree to the <a href="#" id="tnc">terms & conditions.</a>
+			</span>
+		</div>
+		<hr class="hrr"><br>
+		<input type="Submit" value="Create Account" id="signup2" onClick="validate()"><br><br>
+		<a href="home.html"><input type="button" value="Home" id="home"></a><br><br>
+	</form>
+</body>
+</html>

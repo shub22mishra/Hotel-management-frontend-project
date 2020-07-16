@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+
+	<script type="text/javascript">
+		
+		function loginform()
+		{
+			document.getElementById('form-login').style.visibility="visible";
+		}
+		function closelogin()
+		{
+			document.getElementById('form-login').style.visibility="hidden";
+		}
+		function validate()
+		{
+			uname=document.getElementById('name').value;
+			roll=document.getElementById('rollno').value;
+			pass=document.getElementById('password').value;
+			if(uname==0 || roll==0 || pass==0)
+			{
+				alert("Please fill in the details");
+			}
+			else if(isNaN(uname)==0)
+			{
+				alert("Name cannot be only numeric");
+			}
+			else if(isNaN(roll)==1)
+			{
+				alert("RollNo can only be numeric");
+			}
+			else
+			{
+				alert("Login Successful");
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<header>
+		<div id="nav-title">
+			<span>YourHostel.in</span>
+		</div>
+		<nav>
+			<ul id="nav-bar">
+				<li class="nav-links"><a href="#howtobook">How to book?</a></li>
+				<li class="nav-links"><a href="#features">Features</a></li>
+				<li class="nav-links"><a href="searchbar.html" target="_blank">Search Hostel</a></li>
+				<li class="nav-links"><a href="#about-us">About Us</a></li>
+				<li class="nav-links"><a href="#footer">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="main1">
+		<div id="body-content">
+			Looking for a hostel at your college? Book your hostel at <span id="website-name">"YourHostel.in"</span> at ease. Very easy to use and also pay your mess, hostel fees through us with secure online payments.
+			<div id="body-btn">
+				<input type="button" name="" value="Login" id="login" onclick="loginform()">
+				<a href="registrationform.html"><input type="button" name="" value="SignUp" id="signup"></a>
+			</div>
+		</div>
+		<div id="form-content">
+			<form method="post" action="#" id="form-login">
+				<table>
+					<tr><th>Login</th></tr>
+					<tr><td class="td">Name</td></tr>
+					<tr><td ><input type="text" name="" placeholder="Enter Name" id="name"></td></tr>
+					<tr><td class="td">RollNo</td></tr>
+					<tr><td><input type="tel" name="" placeholder="Enter RollNo" id="rollno"></td></tr>
+					<tr><td class="td">Password</td></tr>
+					<tr><td><input type="Password" name="" placeholder="Enter Password" id="password"></td></tr>
+					<tr><td><input type="submit" name="" value="Login" id="login-btn" onclick="validate()"></td></tr>
+					<tr><td><input type="button" name="" value="Close" id="reset-btn" onclick="closelogin()"></td></tr>
+					<tr><td><a href="forgotpassword.html" id="fp">Forgot Password?</td></tr></a>
+				</table>
+			</form>
+		</div>
+	</main>
+	
+	<a name="howtobook"></a>	
+	<main id="main2">
+		<figure class="slider-images">
+			<div class="slider-image">
+				<div class="w3-content w3-section">
+  					<img class="mySlides" src="images/gu0.jpg">
+  					<img class="mySlides" src="images/gu1.jpg">
+  					<img class="mySlides" src="images/guist.jpg">
+				</div>
+			</div>
+		</figure>
+		<script>
+			var myIndex = 0;
+			carousel();
+			function carousel() 
+			{
+  				var i;
+  				var x = document.getElementsByClassName("mySlides");
+  				for (i = 0; i < x.length; i++) 
+				{
+   					x[i].style.display = "none";  
+ 				}
+  				myIndex++;
+  				if (myIndex > x.length) {myIndex = 1}    
+  				x[myIndex-1].style.display = "block";  
+				setTimeout(carousel, 2000); // Change image every 2 seconds
+			}
+		</script>
+		<div id="how-to-book">
+			<h1>How to book a hostel room?</h1>
+			<ol id="how-to-book-guide">
+				<li>To make things easy you can first search the availability of hostels in your college from the "Hostels" section present in the navigation bar.</li>
+				<li>Find your desired hostel then just create an account and book a hostel of your choice.</li>
+				<li>Once you have booked your hostel the representative or the head of the hostel will get back to you after verifying your details and your application for hostel accomodation will be accepted depending on the availability of hostels.</li>
+			</ol>
+		</div>
+	</main>
+
+	<a name="features"></a>
+	<main id="main3">
+		<figure class="slider-images1">
+			<div class="slider-image1">
+				<div class="w3-content w3-section1">
+					<img class="mySlides1" src="images/gu0.jpg">
+					<img class="mySlides1" src="images/gu1.jpg">
+					<img class="mySlides1" src="images/guist.jpg">
+				</div>
+			</div>
+		</figure>
+		<script>
+			var myIndex1 = 0;
+			carousel1();
+			function carousel1() 
+			{
+				var i;
+				var x = document.getElementsByClassName("mySlides1");
+				for (i = 0; i < x.length; i++) 
+				{
+					x[i].style.display = "none";  
+				}
+				myIndex1++;
+				if (myIndex1 > x.length) {myIndex1 = 1}    
+				x[myIndex1-1].style.display = "block";  
+				setTimeout(carousel1, 2000); // Change image every 2 seconds
+			}
+		</script>
+		<div id="website-features">
+			<h1>Features</h1>
+			<ol id="features">
+				<li>Pay your hostel and mess fees through secure online payments.</li>
+				<li>Search for availability of hostels in your college.</li>
+				<li>Give feedback online regarding quality of food and cleanliness.</li>
+				<li>You can rate your hostel and the rating will be available to all users and non-users.</li>
+				<li>You can ask queries related to food, cleanliness and other things directly to your hostel head/warden through our inbuilt messaging system.</li>
+			</ol>
+		</div>
+	</main>
+
+	<a name="about-us"></a>
+	<main id="main4">
+		<div id="about-us">
+			<h1>From the developers</h1>
+			<p class="about-us-msg">
+			"YourHostel" has been developed to ease the process of booking hostels in your colleges. Hostel life is something that every college student should experienced in their lifetime. But many students don't take hostels in a fear to get ragged or because of bad food. Here at "YourHostel" we ensure that the hostels provide a safe, secure and a clean environment for all the students. Currently only 1 university has joined with us and plans are underway to integrate many more college hostels, private hostels and even PG's.</p>
+		</div>
+	</main>
+
+	<footer>
+		<a name="footer"></a>
+		<div id="footer-top">
+			<div id="footer-top-content">
+				<span>Developed by Manish Boro, Bhabesh Kalita and Gaurav Baruah</span>
+			</div>
+			<div id="footer-top-images">
+				<span>Social Media :</span>
+				<a href="#"><img class="footer-image" src="images/whatsapp.png"></a><span>WhatsApp</span>
+				<a href="#"><img class="footer-image" src="images/facebook.png"></a><span>Facebook</span>
+				<a href="#"><img class="footer-image" src="images/instagram.png"></a><span>Instagram</span><br>
+				<span>Email : yourhostel@gmail.com</span><br><span>Phone : 7002638259</span>
+			</div>
+		</div>
+		<div id="footer-base">
+			<span id="footer-base-content">&copy 2019 YourHostel | All Rights Reserved</span>
+		</div>
+	</footer>
+	
+	
+</body>
+</html>
